@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="Cisco SLAACDHCPv6 Router Lab" version="1" scripttimeout="300" password="" author="1" countdown="60" darkmode="" mode3d="" nogrid="" joinable="2" joinable_emails="1" openable="2" openable_emails="1" editable="2" editable_emails="1" multi_config_active="">
+  <topology>
+    <nodes>
+      <node id="1" type="qemu" template="mikrotik" config="0" config_script="config_mikrotik.py" script_timeout="1200" config_data="" multi_config="W10=" delay="0" icon="Router.png" image="mikrotik-6.48.1" left="498" name="Mikrotik" top="204" size="0" console="telnet" ethernet="4" nvram="0" ram="256" serial="0" idlepc="0x0" cpu="1" cpulimit="1" uuid="2309f871-2046-4977-8468-f32cccf7bf98" firstmac="" first_nic="" qemu_options=" " qemu_version="2.12.0" qemu_arch="x86_64" qemu_nic="e1000" username="" password="" eth_format="" console_2nd="" map_port="" map_port_2nd="">
+        <interface id="0" name="eth1" type="ethernet" network_id="1" style="" linkstyle="Straight" color="#0066aa" label="192.168.1.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+        <interface id="1" name="eth2" type="ethernet" network_id="2" style="" linkstyle="Straight" color="#0066aa" label="10.10.10.1/30" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+        <interface id="2" name="eth3" type="ethernet" network_id="7" style="" linkstyle="" color="" label="" linkcfg="" labelpos="" srcpos="" dstpos="" width="" fontsize=""/>
+        <interface id="3" name="eth4" type="ethernet" network_id="8" style="" linkstyle="Straight" color="#0066aa" label="192.168.3.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+      </node>
+      <node id="2" type="vpcs" template="vpcs" config="0" config_script="embedded" script_timeout="" config_data="" multi_config="W10=" delay="0" icon="Desktop.png" image="" left="471" name="PC1" top="432" size="0" console="" ethernet="1" nvram="1024" ram="128" serial="0" idlepc="0x0" cpu="0" cpulimit="1">
+        <interface id="0" name="eth0" type="ethernet" network_id="1" style="" linkstyle="Straight" color="#0066aa" label="192.168.1.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+      </node>
+      <node id="3" type="iol" template="iol" config="0" config_script="embedded" script_timeout="" config_data="" multi_config="W10=" delay="0" icon="Router.png" image="i86bi_LinuxL3-AdvEnterpriseK9-M2_157_3_May_2018.bin" left="828" name="R1 (Cisco)" top="213" size="0" console="" ethernet="1" nvram="1024" ram="1024" serial="0" idlepc="0x0" cpu="0" cpulimit="1" iol_options="" keepalive="0">
+        <interface id="0" name="e0/0" type="ethernet" network_id="2" style="" linkstyle="Straight" color="#0066aa" label="10.10.10.1/30" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="3" style="" linkstyle="Straight" color="#0066aa" label="192.168.2.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+        <interface id="32" name="e0/2" type="ethernet" network_id="6" style="" linkstyle="" color="" label="" linkcfg="" labelpos="" srcpos="" dstpos="" width="" fontsize=""/>
+      </node>
+      <node id="4" type="vpcs" template="vpcs" config="0" config_script="embedded" script_timeout="" config_data="" multi_config="W10=" delay="0" icon="Desktop.png" image="" left="834" name="PC2" top="429" size="0" console="" ethernet="1" nvram="1024" ram="128" serial="0" idlepc="0x0" cpu="0" cpulimit="1">
+        <interface id="0" name="eth0" type="ethernet" network_id="3" style="" linkstyle="Straight" color="#0066aa" label="192.168.2.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+      </node>
+      <node id="5" type="iol" template="iol" config="0" config_script="embedded" script_timeout="" config_data="" multi_config="W10=" delay="0" icon="L3Switch Blue.png" image="i86bi_LinuxL2-AdvEnterpriseK9-M_152_May_2018.bin" left="1083" name="SwitchCisco1" top="198" size="0" console="" ethernet="1" nvram="1024" ram="1024" serial="0" idlepc="0x0" cpu="0" cpulimit="1" iol_options="" keepalive="0">
+        <interface id="0" name="e0/0" type="ethernet" network_id="4" style="" linkstyle="Straight" color="#0066aa" label="192.168.10.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="5" style="" linkstyle="Straight" color="#0066aa" label="192.168.20.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+        <interface id="32" name="e0/2" type="ethernet" network_id="6" style="" linkstyle="" color="" label="" linkcfg="" labelpos="" srcpos="" dstpos="" width="" fontsize=""/>
+      </node>
+      <node id="6" type="vpcs" template="vpcs" config="0" config_script="embedded" script_timeout="" config_data="" multi_config="W10=" delay="0" icon="Desktop.png" image="" left="1035" name="PC3" top="432" size="0" console="" ethernet="1" nvram="1024" ram="128" serial="0" idlepc="0x0" cpu="0" cpulimit="1">
+        <interface id="0" name="eth0" type="ethernet" network_id="4" style="" linkstyle="Straight" color="#0066aa" label="192.168.10.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+      </node>
+      <node id="7" type="vpcs" template="vpcs" config="0" config_script="embedded" script_timeout="" config_data="" multi_config="W10=" delay="0" icon="Desktop.png" image="" left="1218" name="PC4" top="438" size="0" console="" ethernet="1" nvram="1024" ram="128" serial="0" idlepc="0x0" cpu="0" cpulimit="1">
+        <interface id="0" name="eth0" type="ethernet" network_id="5" style="" linkstyle="Straight" color="#0066aa" label="192.168.20.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+      </node>
+      <node id="8" type="docker" template="docker" config="0" config_script="config_docker.py" script_timeout="" config_data="" multi_config="W10=" delay="0" icon="Laptop.png" image="pnetlab/pnet-chrome:latest" left="612" name="Chrome" top="438" size="0" console="rdp" ethernet="2" nvram="1024" ram="256" serial="0" idlepc="0x0" cpu="1" cpulimit="1" docker_options="--privileged" username="" password="" console_2nd="" map_port="" map_port_2nd="" eth1_dhcp="1" eth1_ip="" eth2_dhcp="0" eth2_ip="" eth3_dhcp="0" eth3_ip="" default_route="" DNS="">
+        <interface id="1" name="eth1" type="ethernet" network_id="8" style="" linkstyle="Straight" color="#0066aa" label="192.168.3.0/24" linkcfg="{}" labelpos="{}" srcpos="{}" dstpos="{}" width="2" fontsize=""/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Mikrotikiface_0" left="0" top="0" visibility="0" icon="lan.png" size=""/>
+      <network id="2" type="bridge" name="Mikrotikiface_1" left="0" top="0" visibility="0" icon="lan.png" size=""/>
+      <network id="3" type="bridge" name="VPCiface_0" left="0" top="0" visibility="0" icon="lan.png" size=""/>
+      <network id="4" type="bridge" name="SwitchCisco1iface_0" left="0" top="0" visibility="0" icon="lan.png" size=""/>
+      <network id="5" type="bridge" name="SwitchCisco1iface_16" left="0" top="0" visibility="0" icon="lan.png" size=""/>
+      <network id="6" type="bridge" name="SwitchCisco1iface_32" left="0" top="0" visibility="0" icon="lan.png" size=""/>
+      <network id="7" type="pnet_nat" name="Cloud-Nat" left="306" top="207" visibility="1" icon="cloud.png" size=""/>
+      <network id="8" type="bridge" name="Dockeriface_1" left="0" top="0" visibility="0" icon="lan.png" size=""/>
+    </networks>
+  </topology>
+</lab>
