@@ -1,4 +1,4 @@
-Mikrotik, Cisco Router, and Multilayer Switch (L2) 
+Mikrotik, Cisco Router, and Multilayer Switch (L2) WITH PNETLAB
 
 This lab setup includes the configuration of Mikrotik and Cisco routers along with Layer 2 Multilayer switches. It utilizes both graphical (Winbox) and command-line interfaces (CLI) through Putty for configuration. The network is connected via Network Address Translation (NAT) and implements static routing to manage traffic flow and ensure efficient data communication.
 
